@@ -46,39 +46,39 @@ class GearRatios {
     private fun check(i: Int, j: Int, num: String): Boolean {
         val startCheck = max(0, j - num.length - 1)
 
-        var isPart = false
+        val toCheck = mutableListOf<Pair<Int, Int>>()
 
         if (startCheck >= 0) {
-            isPart = isPart || input[i][startCheck].isSymbol()
-            addToGears(i, startCheck, num.toInt())
+            toCheck.add(Pair(i, startCheck))
         }
 
         if (j < input[i].length) {
-            isPart = isPart || input[i][j].isSymbol()
-            addToGears(i, j, num.toInt())
+            toCheck.add(Pair(i, j))
         }
 
         if (i > 0) {
-            for(k in startCheck..<min(j + 1, input[i - 1].length) ) {
-                isPart = isPart || input[i - 1][k].isSymbol()
-                addToGears(i - 1, k, num.toInt())
-            }
+            toCheck.addAll(
+                IntRange(startCheck, min(j + 1, input[i - 1].length) - 1).map {
+                    Pair(i - 1, it)
+                }
+            )
         }
 
         if (i < input.size - 1) {
-            for (k in startCheck..<min(j + 1, input[i + 1].length) ) {
-                isPart = isPart || input[i + 1][k].isSymbol()
-                addToGears(i + 1, k, num.toInt())
-            }
+            toCheck.addAll(
+                IntRange(startCheck, min(j + 1, input[i + 1].length) - 1).map {
+                    Pair(i + 1, it)
+                }
+            )
         }
 
-        return isPart
-    }
-
-    private fun addToGears(x: Int, y: Int, n: Int) {
-        if (input[x][y] == '*') {
-            gearMap[Pair(x, y)] = listOf(n) + gearMap.getOrDefault(Pair(x, y), emptyList())
+        toCheck.filter {
+            input[it.first][it.second] == '*'
+        }.forEach {
+            gearMap[it] = listOf(num.toInt()) + gearMap.getOrDefault(it, emptyList())
         }
+
+        return toCheck.any { input[it.first][it.second].isSymbol() }
     }
 
     private fun Char.isSymbol() = !this.isDigit() && this != '.'
