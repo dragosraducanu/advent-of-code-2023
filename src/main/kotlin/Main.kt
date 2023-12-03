@@ -3,6 +3,9 @@ fun main(args: Array<String>) {
 //    TheTrebuchet().solve()
 
 //    day 2
-    CubeConundrum().solve()
+//    CubeConundrum().solve()
+
+//    day 3
+    GearRatios().solve()
 
 }
