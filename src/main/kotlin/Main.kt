@@ -6,6 +6,9 @@ fun main(args: Array<String>) {
 //    CubeConundrum().solve()
 
 //    day 3
-    GearRatios().solve()
+//    GearRatios().solve()
+
+//    day 4
+    Scratchcards().solve()
 
 }
