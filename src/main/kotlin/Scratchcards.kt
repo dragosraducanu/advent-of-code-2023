@@ -43,7 +43,4 @@ class Scratchcards {
             .filter { it.isNotEmpty() }
             .map { it.trim().toInt() }
 
-
-    private fun String.trimSplit(delim: String): List<String> = this.trim().split(delim)
-
 }

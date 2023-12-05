@@ -9,6 +9,8 @@ fun main(args: Array<String>) {
 //    GearRatios().solve()
 
 //    day 4
-    Scratchcards().solve()
+//    Scratchcards().solve()
 
+//    day 5
+    Seeds().solve()
 }
