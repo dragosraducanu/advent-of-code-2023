@@ -12,5 +12,7 @@ fun main(args: Array<String>) {
 //    Scratchcards().solve()
 
 //    day 5
-    Seeds().solve()
+//    Seeds().solve()
+//    day 6
+    WaitForIt().solve()
 }

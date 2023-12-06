@@ -1,1 +1,1 @@
-fun String.trimSplit(delim: String): List<String> = this.trim().split(delim)
+fun String.trimSplit(delim: String): List<String> = this.trim().split(delim).filterNot { it.isEmpty() }

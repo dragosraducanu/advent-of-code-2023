@@ -3,7 +3,7 @@ import java.util.LinkedList
 import java.util.Queue
 import kotlin.math.max
 import kotlin.math.min
-
+//https://adventofcode.com/2023/day/5
 class Seeds {
 
     fun solve() {
