@@ -13,6 +13,11 @@ fun main(args: Array<String>) {
 
 //    day 5
 //    Seeds().solve()
+
 //    day 6
-    WaitForIt().solve()
+//    WaitForIt().solve()
+
+//    day 7
+    CamelCards().solve()
 }
+
