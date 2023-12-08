@@ -18,6 +18,9 @@ fun main(args: Array<String>) {
 //    WaitForIt().solve()
 
 //    day 7
-    CamelCards().solve()
+//    CamelCards().solve()
+
+//    day 8
+    HauntedWasteland().solve()
 }
 
